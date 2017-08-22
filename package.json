@@ -1,0 +1,25 @@
+{
+  "name": "ServerForSaintPaschal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joemulick/ServerForSaintPaschal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joemulick/ServerForSaintPaschal/issues"
+  },
+  "homepage": "https://github.com/joemulick/ServerForSaintPaschal#readme",
+  "dependencies": {
+    "next": "^3.0.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
