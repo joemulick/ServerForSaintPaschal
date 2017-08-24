@@ -18,8 +18,15 @@ const PostLink = (props) => (
   </li>
 )
 
+const outerWrapper = {
+  width : '75vw',
+  display : 'block',
+  margin: 'auto'
+}
+
+
 export default () => (
-  <div>
+  <div style={outerWrapper}>
     <Head>
       <title>Saint Paschal Baylon Catholic Church, Thousand Oaks</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
