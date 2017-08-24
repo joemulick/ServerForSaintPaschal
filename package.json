@@ -16,6 +16,16 @@
     "express": "^4.15.2",
     "next": "beta",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",    
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "express-validator": "^3.2.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.7",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7",
+    "react-bootstrap": "^0.31.2"
   }
 }
