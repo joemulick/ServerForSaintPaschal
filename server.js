@@ -1,6 +1,9 @@
 const express = require('express')
 const next = require('next')
-
+// Scraping
+const request = require("request")
+const cheerio = require("cheerio")
+// Scraping End
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()

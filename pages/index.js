@@ -9,7 +9,8 @@ const MassTimes = dynamic(import('../components/homeInnerComponents/MassTimes'))
 const Events = dynamic(import('../components/homeInnerComponents/Events'))
 const SaintOfDay = dynamic(import('../components/homeInnerComponents/SaintOfDay'))
 const CatholicNews = dynamic(import('../components/homeInnerComponents/CatholicNews'))
-
+//about to start https://learnnextjs.com/basics/fetching-data-for-pages/fetching-batman-shows
+//which would be hooking this thing up to a server and getting data
 
 const PostLink = (props) => (
   <li>
@@ -86,3 +87,5 @@ export default () => (
   </div>
   </Layout>
 )
+
+
