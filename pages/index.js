@@ -22,9 +22,19 @@ const PostLink = (props) => (
 const outerWrapper = {
   width : '75vw',
   display : 'block',
-  margin: 'auto'
+  margin: 'auto',
 }
 
+const leftColumnBorder = {
+  padding: '0px'
+}
+const rightColumnBorder = {
+  padding: '0px'
+}
+const backgroundInner = {
+  background: '#e5bc6b',
+  border: '2px solid'
+}
 
 export default () => (
   <Layout>
@@ -34,6 +44,16 @@ export default () => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     </Head>
+     <style jsx global>{`
+      body { 
+        background: url(https://res.cloudinary.com/ddsihrmda/image/upload/v1503680930/rustic-wallpaper_g4haou.jpg) fixed;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    `}</style>
+    <div style={backgroundInner}>
       <Row className="show-grid">
           <Col md={12}>
             <HomeImage />
@@ -41,7 +61,7 @@ export default () => (
       </Row>
 
       <Row className="show-grid">
-          <Col xs={12} md={8}>
+          <Col style={leftColumnBorder} xs={12} md={8}>
 
             <Welcome />
 
@@ -55,14 +75,14 @@ export default () => (
 
           </Col>
 
-          <Col xs={12} md={4}>
+          <Col style={rightColumnBorder} xs={12} md={4}>
           
             <SaintOfDay />
             <CatholicNews />
 
           </Col>
       </Row>
-
+    </div>
   </div>
   </Layout>
 )

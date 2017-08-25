@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 const welcomBorderStyle = {
-  borderRight: '1px dashed #ddd',
-  borderLeft: '1px dashed #ddd',
-  boxShadow: '0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee',
+  borderRight: '1px dashed #fff4ce',
+  borderLeft: '1px dashed #fff4ce',
+  boxShadow: '0 0 0 3px #8c7341, 0 0 0 5px #fff4ce, 0 0 0 10px #8c7341, 0 0 2px 10px #000000',
   maxWidth: '92%',
   marginTop: '9%',
   marginLeft: '4%',
