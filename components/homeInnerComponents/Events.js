@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 
 const eventsOuterContainer = {
 	borderStyle: '1px solid',
-	margin: '10%'
+	margin: '4%'
 
+}
+
+const EventsTitle ={
+    marginLeft: '3%',
+    marginBottom: '3%'
 }
 
 const eventOneContainer = {
@@ -22,7 +27,7 @@ class Events extends Component {
   render() {
     return (    	
     	<div style={eventsOuterContainer}>
-    		<div><h2>Upcoming Events</h2></div>
+    		<div><h2 style={EventsTitle}>Upcoming Events</h2></div>
 
     		<div style={eventOneContainer}>
 	    		<div>Event 1</div>
