@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Row, Col } from 'react-bootstrap'
+import Layout from '../components/MyLayout.js'
 const HomeImage = dynamic(import('../components/homeInnerComponents/HomeImage'))
 const Welcome = dynamic(import('../components/homeInnerComponents/Welcome'))
 const MassTimes = dynamic(import('../components/homeInnerComponents/MassTimes'))
@@ -26,6 +27,7 @@ const outerWrapper = {
 
 
 export default () => (
+  <Layout>
   <div style={outerWrapper}>
     <Head>
       <title>Saint Paschal Baylon Catholic Church, Thousand Oaks</title>
@@ -62,4 +64,5 @@ export default () => (
       </Row>
 
   </div>
+  </Layout>
 )
