@@ -32,58 +32,57 @@ app.prepare()
   process.exit(1)
 })
 
-// Scrape Stuff 
+////////////////////////////////
+///////// Scrape Stuff /////////
+////////////////////////////////
+
 
 request("https://www.catholicnewsagency.com/headlines/", function(error, response, html) {
-
   // Load the HTML into cheerio and save it to a variable
   // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
   var $ = cheerio.load(html);
-
-  // An empty array to save the data that we'll scrape
+  // Empty arrays to save the data that we'll scrape
   var resultLink = [];
   var resultImage = [];
   var resultTitle = [];
   var resultText = [];
-
+  var resultEverything =[];
   /////// Scrapes Everything /////////
-
-  $(".noticia_list_contenedor").each(function(i, element) {
-
-    var everything = $(this).text();
-
-    var link = $(".noticia_list_imagen").children().attr("src");
-    //var image
-    //var title
-    //var text (not sure if the website http://vatican.com/news/frame.aspx?url=http://feedproxy.google.com/~r/catholicnewsagency/dailynews-vatican/~3/HdOG4SDdKeY/
-    //allows you to scrape the article summary easily.. we may need to scrap entire div's text and then shift() out the # of elements as in the title)
-
-    resultText.push({
-      everything: everything
+  for(var i = 0; i < 10; i++){
+    $(".noticia_list_contenedor").each(function(i, element) {
+      var everything = $(this).text();
+      //http://www.catholicnewsagency.com/headlines/
+      resultEverything.push({ everything: everything });
     });
-
-  });
-
-  console.log("Everything: " + resultText);
-
+  } // End For Loop
+  console.log("Everything: " + resultEverything);
   /////// Scrape Everything End /////////
-
   /////// Scrapes Link /////////
-
+  for(var i = 0; i < 10; i++){
     $(".noticia_list_imagen").each(function(i, element) {
-
     var imgLink = $(element).attr("src");
-
-    resultLink.push({ resultLink: imgLink });
-
+    resultLink.push({ imgLink : imgLink });
     });
-
+  }
     console.log("Links: " + JSON.stringify(resultLink[0]));
     // Image url gets captured correctly but you need to json stringify it to see its contents in string form
-
   ////////// Scrape Link End ////////////
-
-
-  
-  
+  /////// Scrapes Title /////////
+  for(var i = 0; i < 10; i++){
+    $(".noticia_list_title").each(function(i, element) {
+      var title = $(this).text();
+      resultTitle.push({ title : title });
+    });
+  } // End For Loop
+  console.log("Title's: " + JSON.stringify(resultTitle[0]) + " " + JSON.stringify(resultTitle[1]));
+  /////// Scrapes Title End /////////  
+    /////// Scrapes Summary Text /////////
+  for(var i = 0; i < 10; i++){
+    $(".noticia_list_body").each(function(i, element) {
+      var summary = $(this).text();
+      resultText.push({ summary : summary });
+    });
+  } // End For Loop
+  console.log("Summary text: " + JSON.stringify(resultText[0]) + " " + JSON.stringify(resultText[1]));
+  /////// Scrapes Summary Text /////////    
 });
