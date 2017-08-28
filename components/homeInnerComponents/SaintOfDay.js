@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 const saints = {
 
-	[
-	{
-
+	[{
 	name : 'St. Francis of Assisi',
 	image: 'https://res.cloudinary.com/ddsihrmda/image/upload/v1503775501/st-francis-of-assisi_euu2xw.jpg'
 	birthyear : '1181',
@@ -40,35 +38,37 @@ const saints = {
 	youtubeurl: 'https://www.youtube.com/watch?v=AAJTsxi6Oj0',
 	bio: 'St. Anthony of Padua, Anthony also spelled Antony, Italian Sant’Antonio da Padova, original name Fernando Martins de Bulhões (born 1195, Lisbon, Portugal—died June 13, 1231, Arcella, Verona [now in Italy]; canonized 1232; feast day June 13), Franciscan friar, doctor of the church, and patron of the poor. Padua and Portugal claim him as their patron saint, and he is invoked for the return of lost property.'
 
-	},{
+	}]
+	
+}
 
-	name: '',
-	image: '',
-	birthyear: '',
-	url: '',
-	youtubeurl: '',
-	bio: ''
+const sodOuter = {
 
-	},{
+}
 
-	name: '',
-	image: '',
-	birthyear: '',
-	url: '',
-	youtubeurl: '',
-	bio: ''
+const sodInner = {
 
-	}
+}
 
+const sodTitle = {
 
-	]
+}
+
+const sodBody = {
 	
 }
 
 class SaintOfDay extends Component {
   render() {
     return (    	
-    	<p>Saint of The Day Section</p>
+    	<div style={sodOuter}>
+    		<div style={sodInner}>
+    			<div style={sodTitle}>
+    			</div>
+    			<div style={sodBody}>
+    			</div>
+    		</div>
+    	</div>
     );
   }
 }
