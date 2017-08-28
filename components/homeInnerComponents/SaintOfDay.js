@@ -53,14 +53,32 @@ const sodBody = {
 
 }
 
+const sodImage = {
+
+}
+
+const sodBodyInner = {
+
+}
+
 class SaintOfDay extends Component {
   render() {
     return (    	
     	<div style={sodOuter}>
     		<div style={sodInner}>
     			<div style={sodTitle}>
+    				<p>Holy Person of the day</p>
     			</div>
     			<div style={sodBody}>
+    				<div style={sodBodyInner}>
+    					<img style={sodImage} src="https://res.cloudinary.com/ddsihrmda/image/upload/v1503029655/main-img-ed_muc2g0.jpg" responsive />></img>
+    				</div>
+    				<div>
+    					<p>Name:</p><div></div>
+    					<div></div>
+    					<p>Birthyear:</p><div></div>
+    					<p>Bio:</p><div></div>
+    				<div>
     			</div>
     		</div>
     	</div>
