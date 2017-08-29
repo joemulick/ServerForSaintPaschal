@@ -94,6 +94,10 @@ const stLeftInnerInnerInner = {
 
 }
 
+const stLeftInnerInnerInnerMid = {
+	margin: '25px auto'
+}
+
 const stRightInnerInner = {
 	display: 'inline-block',
 	maxWidth: '45%',
@@ -108,13 +112,19 @@ const stBio = {
 
 const stInfo = {
 	textAlign: 'center',
-	fontSize: '1.2em'
+	fontSize: '1.2em',
+	margin: '5px auto'
 }
 
 const stName = {
+	textAlign: 'center',
 	fontSize: '1.5em'
 }
 
+const hrStat = {
+	width: '60%',
+	margin: '0px auto'
+}
 
 
 
@@ -147,12 +157,14 @@ class SaintOfDay extends Component {
     					<div style={stLeftInnerInnerInner}>
         			 		<p style={stName}>{this.state.name}</p>
         			 	</div>
-        			 	<div style={stLeftInnerInnerInner}>
+        			 	<div style={stLeftInnerInnerInnerMid}>
         			 		<p style={stInfo}>Birth Year</p>
+        			 		<hr style={hrStat} />
         			 		<p style={stInfo}>{this.state.birthyear}</p>
         			 	</div>
         			 	<div style={stLeftInnerInnerInner}>
         			 		<p style={stInfo}>Birth Location</p>
+        			 		<hr style={hrStat} />
         			 		<p style={stInfo}>{this.state.birthLocation}</p> 
         			 	</div>     			 			
     			</div>
