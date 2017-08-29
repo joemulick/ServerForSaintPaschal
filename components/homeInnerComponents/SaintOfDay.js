@@ -50,7 +50,8 @@ const sodOuter = {
 }
 
 const sodTitleDiv = {
-	width: '100%'
+	width: '100%',
+	marginBottom: '10px'
 }
 
 const sodTitle = {
@@ -85,7 +86,12 @@ const stLinkTube = {
 
 const stLeftInnerInner = {
 	display: 'inline-block',
-	maxWidth: '45%'
+	marginTop: '20px',
+	minWidth: '50%'
+}
+
+const stLeftInnerInnerInner = {
+
 }
 
 const stRightInnerInner = {
@@ -96,22 +102,20 @@ const stRightInnerInner = {
 	right: '10%'
 }
 
-
-const stBirthyear = {
-
-}
-
-const stBirthLocation = {
-
-}
-
 const stBio = {
 
 }
 
-const stName = {
-
+const stInfo = {
+	textAlign: 'center',
+	fontSize: '1.2em'
 }
+
+const stName = {
+	fontSize: '1.5em'
+}
+
+
 
 
   
@@ -136,18 +140,20 @@ class SaintOfDay extends Component {
     return (    	
     	<div style={sodOuter}>
     		<div style={sodTitleDiv}>
-    				<p style={sodTitle}>Holy Person of the day</p>
+    				<h4 style={sodTitle}>Holy Person of the day</h4>
     		</div>
     		<div style={stMid}>
     			<div style={stLeftInnerInner}>
-    					<div>
+    					<div style={stLeftInnerInnerInner}>
         			 		<p style={stName}>{this.state.name}</p>
         			 	</div>
-        			 	<div>
-        			 		<p style={stBirthyear}>{this.state.birthyear}</p>
+        			 	<div style={stLeftInnerInnerInner}>
+        			 		<p style={stInfo}>Birth Year</p>
+        			 		<p style={stInfo}>{this.state.birthyear}</p>
         			 	</div>
-        			 	<div>
-        			 		<p style={stBirthLocation}>{this.state.birthLocation}</p> 
+        			 	<div style={stLeftInnerInnerInner}>
+        			 		<p style={stInfo}>Birth Location</p>
+        			 		<p style={stInfo}>{this.state.birthLocation}</p> 
         			 	</div>     			 			
     			</div>
     			<div style={stRightInnerInner}>
