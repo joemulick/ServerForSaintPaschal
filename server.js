@@ -1,3 +1,11 @@
+/* MongoDB stuff */
+/* ************* */
+const { MongoClient } = require('mongodb')
+const api = require('./lib/api')
+const body = require('body-parser')
+const co = require('co')
+/* ************* */
+/* ************* */
 const express = require('express')
 const next = require('next')
 // Scraping
@@ -8,29 +16,67 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-app.prepare()
-.then(() => {
+
+/* ************* */
+/* MongoDB stuff */
+/* ************* */
+
+const MONGO_URL = 'mongodb://localhost:27017/test'
+const PORT = 3000
+
+co(function * () {
+  yield app.prepare()
+
+  console.log(`Connecting to ${MONGO_URL}`)
+  const db = yield MongoClient.connect(MONGO_URL)
+
   const server = express()
 
-  server.get('/p/:id', (req, res) => {
-    const actualPage = '/post'
-    const queryParams = { title: req.params.id } 
-    app.render(req, res, actualPage, queryParams)
+  server.use(body.json())
+  server.use((req, res, next) => {
+    req.db = db
+    next()
   })
+  server.use('/api', api(db))
 
   server.get('*', (req, res) => {
     return handle(req, res)
   })
 
-  server.listen(3000, (err) => {
-    if (err) throw err
-    console.log('> Ready on http://localhost:3000')
-  })
-})
-.catch((ex) => {
-  console.error(ex.stack)
-  process.exit(1)
-})
+  server.listen(PORT)
+  console.log(`Listening on ${PORT}`)
+}).catch(error => console.error(error.stack))
+
+
+/* ************* */
+/* ************* */
+/* ************* */
+
+/* This was the Old server code which was replaced with the entire above for the implementation of mongodb */
+
+// app.prepare()
+// .then(() => {
+//   const server = express()
+
+//   server.get('/p/:id', (req, res) => {
+//     const actualPage = '/post'
+//     const queryParams = { title: req.params.id } 
+//     app.render(req, res, actualPage, queryParams)
+//   })
+
+//   server.get('*', (req, res) => {
+//     return handle(req, res)
+//   })
+
+//   server.listen(3000, (err) => {
+//     if (err) throw err
+//     console.log('> Ready on http://localhost:3000')
+//   })
+// })
+// .catch((ex) => {
+//   console.error(ex.stack)
+//   process.exit(1)
+// })
 
 ////////////////////////////////
 ///////// Scrape Stuff /////////

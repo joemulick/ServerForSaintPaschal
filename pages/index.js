@@ -1,3 +1,4 @@
+
 import Link from 'next/link'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
@@ -10,12 +11,6 @@ const Events = dynamic(import('../components/homeInnerComponents/Events'))
 const SaintOfDay = dynamic(import('../components/homeInnerComponents/SaintOfDay'))
 const CatholicNews = dynamic(import('../components/homeInnerComponents/CatholicNews'))
 import axios from 'axios'
-
-  // var resultLink = [];
-  // var resultImage = [];
-  // var resultTitle = [];
-  // var resultText = [];
-  // var resultEverything =[];
 
 //about to start https://learnnextjs.com/basics/fetching-data-for-pages/fetching-batman-shows
 //which would be hooking this thing up to a server and getting data
