@@ -77,7 +77,8 @@ const stMid = {
 const stLower = {
 	width: '96%',
 	maxHeight: '160px',
-	overflow: 'scroll'
+	overflowY: 'scroll',
+	marginBottom: '25px'
 }
 
 const stLinkTube = {
@@ -107,7 +108,7 @@ const stRightInnerInner = {
 }
 
 const stBio = {
-
+	margin: '3% 6% 3%'
 }
 
 const stInfo = {
@@ -126,6 +127,17 @@ const hrStat = {
 	margin: '0px auto'
 }
 
+const hrBioStat = {
+	margin: '0px 0 5px',
+	width: '17%',
+	marginLeft: '8%'
+}
+
+const stBioInfo = {
+	fontSize: '1.2em',
+	margin: '5px auto',
+	marginLeft: '13.5%'
+}
 
 
   
@@ -173,6 +185,8 @@ class SaintOfDay extends Component {
     			</div>
     		</div>
     		<div style={stLower}>
+    				<p style={stBioInfo}>Bio</p>
+    				<hr style={hrBioStat} />
     				<p style={stBio}>{this.state.bio}</p> 
     		</div>
     		

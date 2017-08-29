@@ -30,11 +30,15 @@ const leftColumnBorder = {
   padding: '0px'
 }
 const rightColumnBorder = {
-  padding: '0px'
+  padding: '0px',
+  borderLeft: '1px solid #cea960'
 }
 const backgroundInner = {
   background: '#e5bc6b',
   border: '2px solid'
+}
+const hrIndex = {
+  width: '85%'
 }
 
 export default () => (
@@ -66,11 +70,11 @@ export default () => (
 
             <Welcome />
 
-            <hr/>
+            <hr style={hrIndex} />
 
             <MassTimes />
 
-            <hr/>
+            <hr style={hrIndex}/>
 
             <Events />
 
@@ -79,6 +83,10 @@ export default () => (
           <Col style={rightColumnBorder} xs={12} md={4}>
           
             <SaintOfDay />
+
+            <hr  style={hrIndex}/>
+
+
             <CatholicNews />
 
           </Col>
