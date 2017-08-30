@@ -1,11 +1,14 @@
 /* MongoDB stuff */
 /* ************* */
+
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
+
 /* ************* */
 /* ************* */
+
 const express = require('express')
 const next = require('next')
 // Scraping
@@ -20,6 +23,8 @@ const handle = app.getRequestHandler()
 /* ************* */
 /* MongoDB stuff */
 /* ************* */
+
+var Example = require("./userModel.js");
 
 mongoose.connect("mongodb://localhost/SaintPaschalDev");
 // Hook mongoose connection to db
