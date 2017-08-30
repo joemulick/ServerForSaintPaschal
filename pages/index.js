@@ -4,13 +4,12 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Row, Col } from 'react-bootstrap'
 import Layout from '../components/MyLayout.js'
-const HomeImage = dynamic(import('../components/homeInnerComponents/HomeImage'))
 const Welcome = dynamic(import('../components/homeInnerComponents/Welcome'))
 const MassTimes = dynamic(import('../components/homeInnerComponents/MassTimes'))
 const Events = dynamic(import('../components/homeInnerComponents/Events'))
 const SaintOfDay = dynamic(import('../components/homeInnerComponents/SaintOfDay'))
 const CatholicNews = dynamic(import('../components/homeInnerComponents/CatholicNews'))
-
+const HomeImage = dynamic(import('../components/homeInnerComponents/HomeImage'))
 //about to start https://learnnextjs.com/basics/fetching-data-for-pages/fetching-batman-shows
 //which would be hooking this thing up to a server and getting data
 
