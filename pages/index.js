@@ -51,7 +51,7 @@ export default () => (
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     </Head>
      <style jsx global>{`
-      body { 
+      body {
         background: url(https://res.cloudinary.com/ddsihrmda/image/upload/v1503680930/rustic-wallpaper_g4haou.jpg) fixed;
         height: 100%;
         width: 100%;
@@ -82,10 +82,10 @@ export default () => (
           </Col>
 
           <Col style={rightColumnBorder} xs={12} md={4}>
-          
+
             <SaintOfDay />
 
-            <hr  style={hrIndex}/>
+            <hr style={hrIndex}/>
 
             <CatholicNews />
 
@@ -95,5 +95,3 @@ export default () => (
   </div>
   </Layout>
 )
-
-

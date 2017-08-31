@@ -1,24 +1,20 @@
 /* MongoDB stuff */
 /* ************* */
-
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
-
 /* ************* */
 /* ************* */
-
 const express = require('express')
 const next = require('next')
-// Scraping
+// Scraping stuff
 const request = require("request")
 const cheerio = require("cheerio")
-// Scraping End
+// Scraping stuff End
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-
 /* ************* */
 /* MongoDB stuff */
 /* ************* */
@@ -47,7 +43,7 @@ app.prepare()
 
   server.get('/p/:id', (req, res) => {
     const actualPage = '/post'
-    const queryParams = { title: req.params.id } 
+    const queryParams = { title: req.params.id }
     app.render(req, res, actualPage, queryParams)
   })
 
@@ -108,7 +104,7 @@ request("https://www.catholicnewsagency.com/headlines/", function(error, respons
     });
   } // End For Loop
   console.log("Title's: " + JSON.stringify(resultTitle[0]) + " " + JSON.stringify(resultTitle[1]));
-  /////// Scrapes Title End /////////  
+  /////// Scrapes Title End /////////
     /////// Scrapes Summary Text /////////
   for(var i = 0; i < 10; i++){
     $(".noticia_list_body").each(function(i, element) {
@@ -117,5 +113,5 @@ request("https://www.catholicnewsagency.com/headlines/", function(error, respons
     });
   } // End For Loop
   console.log("Summary text: " + JSON.stringify(resultText[0]) + " " + JSON.stringify(resultText[1]));
-  /////// Scrapes Summary Text /////////    
+  /////// Scrapes Summary Text /////////
 });

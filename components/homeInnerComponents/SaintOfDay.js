@@ -56,7 +56,8 @@ const sodTitleDiv = {
 
 const sodTitle = {
 	width: '100%',
-	textAlign: 'center'
+	textAlign: 'center',
+	marginBottom: '35px'
 }
 
 const sodBody = {
@@ -140,7 +141,7 @@ const stBioInfo = {
 }
 
 
-  
+
 class SaintOfDay extends Component {
 
   constructor() {
@@ -154,12 +155,12 @@ class SaintOfDay extends Component {
       birthLocation: saints[0].birthLocation,
       url: saints[0].url,
       youtubeurl: saints[0].youtubeurl,
-      bio: saints[0].bio 
+      bio: saints[0].bio
     };
   }
 
   render() {
-    return (    	
+    return (
     	<div style={sodOuter}>
     		<div style={sodTitleDiv}>
     				<h4 style={sodTitle}>Holy Person of the day</h4>
@@ -177,8 +178,8 @@ class SaintOfDay extends Component {
         			 	<div style={stLeftInnerInnerInner}>
         			 		<p style={stInfo}>Birth Location</p>
         			 		<hr style={hrStat} />
-        			 		<p style={stInfo}>{this.state.birthLocation}</p> 
-        			 	</div>     			 			
+        			 		<p style={stInfo}>{this.state.birthLocation}</p>
+        			 	</div>
     			</div>
     			<div style={stRightInnerInner}>
     					<Image style={sodImage} src={this.state.image} responsive />
@@ -187,9 +188,9 @@ class SaintOfDay extends Component {
     		<div style={stLower}>
     				<p style={stBioInfo}>Bio</p>
     				<hr style={hrBioStat} />
-    				<p style={stBio}>{this.state.bio}</p> 
+    				<p style={stBio}>{this.state.bio}</p>
     		</div>
-    		
+
     	</div>
     );
   }
