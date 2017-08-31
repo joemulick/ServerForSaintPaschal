@@ -6,7 +6,7 @@ This website features:
 
 React JS / Node JS / MongoDB /  Express / Next.js / React-Bootstrap 
 
-Universal (isomorphic) web application.
+Universal (isomorphic) Javascript web application.
 
 #To run on local browser:
 
@@ -17,6 +17,9 @@ If node.js is installed:
 Open bash terminal from folder directory you want to save this folder:
 
 $ git clone git@github.com:joemulick/ServerForSaintPaschal.git
+
 $ cd serverforsaintpaschal
+
 $ npm install
+
 $ npm start
