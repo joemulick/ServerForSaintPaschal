@@ -76,42 +76,56 @@ request("https://www.catholicnewsagency.com/headlines/", function(error, respons
   var resultTitle = [];
   var resultText = [];
   var resultEverything =[];
+  var articleCounter = 0;
   /////// Scrapes Everything /////////
-  for(var i = 0; i < 10; i++){
+
     $(".noticia_list_contenedor").each(function(i, element) {
+      while(articleCounter < 9){
       var everything = $(this).text();
       //http://www.catholicnewsagency.com/headlines/
       resultEverything.push({ everything: everything });
+      articleCounter++;
+      } return
     });
-  } // End For Loop
+
   console.log("Everything: " + resultEverything);
   /////// Scrape Everything End /////////
   /////// Scrapes Link /////////
-  for(var i = 0; i < 10; i++){
+
     $(".noticia_list_imagen").each(function(i, element) {
+    articleCounter = 0;   
+    while(articleCounter < 9){
     var imgLink = $(element).attr("src");
     resultLink.push({ imgLink : imgLink });
+    articleCounter++;
+    } return
     });
-  }
-    console.log("Links: " + JSON.stringify(resultLink[0]));
+
+    console.log("Links: " + JSON.stringify(resultLink[11]));
     // Image url gets captured correctly but you need to json stringify it to see its contents in string form
   ////////// Scrape Link End ////////////
   /////// Scrapes Title /////////
-  for(var i = 0; i < 10; i++){
+
     $(".noticia_list_title").each(function(i, element) {
+      articleCounter = 0;
+      while(articleCounter < 9){ 
       var title = $(this).text();
       resultTitle.push({ title : title });
+      } return
     });
-  } // End For Loop
-  console.log("Title's: " + JSON.stringify(resultTitle[0]) + " " + JSON.stringify(resultTitle[1]));
+
+  console.log("Title's: " + JSON.stringify(resultTitle[11]) + " " + JSON.stringify(resultTitle[1]));
   /////// Scrapes Title End /////////
     /////// Scrapes Summary Text /////////
-  for(var i = 0; i < 10; i++){
+
     $(".noticia_list_body").each(function(i, element) {
+      articleCounter = 0;
+      while(articleCounter < 9){ 
       var summary = $(this).text();
       resultText.push({ summary : summary });
+      } return
     });
-  } // End For Loop
-  console.log("Summary text: " + JSON.stringify(resultText[0]) + " " + JSON.stringify(resultText[1]));
+
+  console.log("Summary text: " + JSON.stringify(resultText[11]) + " " + JSON.stringify(resultText[1]));
   /////// Scrapes Summary Text /////////
 });
