@@ -26,9 +26,8 @@ const outerWrapper = {
   display : 'block',
   margin: 'auto',
 }
-
 const leftColumnBorder = {
-  padding: '0px'
+  padding: '0px',
 }
 const rightColumnBorder = {
   padding: '0px',
@@ -42,6 +41,16 @@ const hrIndex = {
   width: '85%'
 }
 
+
+  // Insert into global jsx for original backgrouns image       
+  // body {
+  //        background: url(http://res.cloudinary.com/ddsihrmda/image/upload/v1503642830/womanPrayingedit_v47z3w.png) fixed;
+  //        height: 100%;
+  //        width: 100%;
+  //        background-repeat: no-repeat;
+  //        background-size: cover;
+  //     }
+
 export default () => (
   <Layout>
   <div style={outerWrapper}>
@@ -51,13 +60,13 @@ export default () => (
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     </Head>
      <style jsx global>{`
-      body {
-        background: url(https://res.cloudinary.com/ddsihrmda/image/upload/v1503680930/rustic-wallpaper_g4haou.jpg) fixed;
-        height: 100%;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+        body {
+          background: url(http://res.cloudinary.com/ddsihrmda/image/upload/v1503642830/womanPrayingedit_v47z3w.png) fixed;
+          height: 100%;
+          width: auto;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
     `}</style>
     <div style={backgroundInner}>
       <Row className="show-grid">

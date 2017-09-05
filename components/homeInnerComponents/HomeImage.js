@@ -11,7 +11,7 @@ const imageResize = {
 class HomeImage extends Component {
   render() {
     return (
-    	<Image style={imageResize} src="https://res.cloudinary.com/ddsihrmda/image/upload/v1503029655/main-img-ed_muc2g0.jpg" responsive />
+    	<Image style={imageResize} src="https://res.cloudinary.com/ddsihrmda/image/upload/v1504563973/main-img-ed-re-one_km4hoe.jpg" responsive />
     );
   }
 }
