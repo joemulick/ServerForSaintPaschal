@@ -1,9 +1,9 @@
 /* MongoDB stuff */
 /* ************* */
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
+// var bodyParser = require("body-parser");
+// var mongoose = require("mongoose");
 // Set mongoose to leverage built in JavaScript ES6 Promises
-mongoose.Promise = Promise;
+// mongoose.Promise = Promise;
 /* ************* */
 /* ************* */
 const express = require('express')
@@ -19,19 +19,19 @@ const handle = app.getRequestHandler()
 /* MongoDB stuff */
 /* ************* */
 
-mongoose.connect("mongodb://localhost/SaintPaschalDev");
+// mongoose.connect("mongodb://localhost/SaintPaschalDev");
 // Hook mongoose connection to db
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
 // Log any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
+// db.on("error", function(error) {
+//   console.log("Mongoose Error: ", error);
+// });
 
 // Log a success message when we connect to our mongoDB collection with no issues
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
+// db.once("open", function() {
+//   console.log("Mongoose connection successful.");
+// });
 
 /* ************* */
 /* ************* */
@@ -41,11 +41,12 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  server.get('/p/:id', (req, res) => {
-    const actualPage = '/post'
-    const queryParams = { title: req.params.id }
-    app.render(req, res, actualPage, queryParams)
-  })
+  // The code below is for next.js "dynamic pages (similar to react router, technically every react app is "dynamic")"
+  // server.get('/p/:id', (req, res) => {
+  //   const actualPage = '/post'
+  //   const queryParams = { title: req.params.id }
+  //   app.render(req, res, actualPage, queryParams)
+  // })
 
   server.get('*', (req, res) => {
     return handle(req, res)
@@ -91,9 +92,9 @@ request("https://www.catholicnewsagency.com/headlines/", function(error, respons
   console.log("Everything: " + resultEverything);
   /////// Scrape Everything End /////////
   /////// Scrapes Link /////////
-
+    articleCounter = 0;
     $(".noticia_list_imagen").each(function(i, element) {
-    articleCounter = 0;   
+       
     while(articleCounter < 9){
     var imgLink = $(element).attr("src");
     resultLink.push({ imgLink : imgLink });
@@ -101,31 +102,37 @@ request("https://www.catholicnewsagency.com/headlines/", function(error, respons
     } return
     });
 
-    console.log("Links: " + JSON.stringify(resultLink[11]));
+    console.log("Links: " + JSON.stringify(resultLink[3])+ "  " + JSON.stringify(resultLink[3]));
     // Image url gets captured correctly but you need to json stringify it to see its contents in string form
   ////////// Scrape Link End ////////////
   /////// Scrapes Title /////////
-
+   
+    articleCounter = 0;
+    
     $(".noticia_list_title").each(function(i, element) {
-      articleCounter = 0;
+      
       while(articleCounter < 9){ 
+      
       var title = $(this).text();
       resultTitle.push({ title : title });
+      
+      articleCounter++;
       } return
     });
 
-  console.log("Title's: " + JSON.stringify(resultTitle[11]) + " " + JSON.stringify(resultTitle[1]));
+  console.log("Title's: " + JSON.stringify(resultTitle[3]) + " " + JSON.stringify(resultTitle[11]));
   /////// Scrapes Title End /////////
     /////// Scrapes Summary Text /////////
-
+    articleCounter = 0;
     $(".noticia_list_body").each(function(i, element) {
-      articleCounter = 0;
+      
       while(articleCounter < 9){ 
       var summary = $(this).text();
       resultText.push({ summary : summary });
+      articleCounter++;
       } return
     });
 
-  console.log("Summary text: " + JSON.stringify(resultText[11]) + " " + JSON.stringify(resultText[1]));
+  console.log("Summary text: " + JSON.stringify(resultText[3]) + " " + JSON.stringify(resultText[3]));
   /////// Scrapes Summary Text /////////
 });

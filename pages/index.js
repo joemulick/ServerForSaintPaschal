@@ -9,23 +9,10 @@ const MassTimes = dynamic(import('../components/homeInnerComponents/MassTimes'))
 const Events = dynamic(import('../components/homeInnerComponents/Events'))
 const SaintOfDay = dynamic(import('../components/homeInnerComponents/SaintOfDay'))
 const CatholicNews = dynamic(import('../components/homeInnerComponents/CatholicNews'))
-const HomeImage = dynamic(import('../components/homeInnerComponents/HomeImage'))
 //about to start https://learnnextjs.com/basics/fetching-data-for-pages/fetching-batman-shows
 //which would be hooking this thing up to a server and getting data
 
-const PostLink = (props) => (
-  <li>
-    <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
-    </Link>
-  </li>
-)
 
-const outerWrapper = {
-  width : '75vw',
-  display : 'block',
-  margin: 'auto',
-}
 const leftColumnBorder = {
   padding: '0px',
 }
@@ -53,27 +40,8 @@ const hrIndex = {
 
 export default () => (
   <Layout>
-  <div style={outerWrapper}>
-    <Head>
-      <title>Saint Paschal Baylon Catholic Church, Thousand Oaks</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-    </Head>
-     <style jsx global>{`
-        body {
-          background: url(http://res.cloudinary.com/ddsihrmda/image/upload/v1503642830/womanPrayingedit_v47z3w.png) fixed;
-          height: 100%;
-          width: auto;
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-    `}</style>
+
     <div style={backgroundInner}>
-      <Row className="show-grid">
-          <Col md={12}>
-            <HomeImage />
-          </Col>
-      </Row>
 
       <Row className="show-grid">
           <Col style={leftColumnBorder} xs={12} md={8}>
@@ -101,6 +69,6 @@ export default () => (
           </Col>
       </Row>
     </div>
-  </div>
+
   </Layout>
 )
