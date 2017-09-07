@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Image } from 'react-bootstrap'
 
-
 const outerDiv = {
   maxWidth: '90%',
   margin: 'auto',
@@ -26,9 +25,6 @@ const imageResize = {
 }
 
 class Events extends Component {
-  // componentDidMount() {
-  //   this.props.requestPageOfPlans();
-  // }
   render() {
     return (
         <div style={outerDiv}>

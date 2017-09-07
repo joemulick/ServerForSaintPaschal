@@ -1,3 +1,5 @@
+//This page is currently not being utilized. Instead I am scraping directly into the DB and loading the page with what is currently in the db.
+
 let cNewsArray = [
 {
  "title" : "After three years of ISIS occupation, the Mass returns to Mosul",
