@@ -4,7 +4,7 @@ Website for Saint Paschal Baylon Church located in Thousand Oaks, CA.
 
 This website features:
 
-React JS / Node JS / MongoDB /  Express / Next.js / React-Bootstrap 
+React JS / Node JS /  Next.js / Express / React-Bootstrap 
 
 Universal (isomorphic) Javascript web application.
 
