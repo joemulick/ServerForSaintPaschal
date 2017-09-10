@@ -1,16 +1,16 @@
-
+import React from 'react'
+import fetch from 'isomorphic-fetch'
 import Link from 'next/link'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Row, Col } from 'react-bootstrap'
 import Layout from '../components/MyLayout.js'
+import cNewsArray from '../api/catholicNewsAPI'
 const Welcome = dynamic(import('../components/homeInnerComponents/Welcome'))
 const MassTimes = dynamic(import('../components/homeInnerComponents/MassTimes'))
 const Events = dynamic(import('../components/homeInnerComponents/Events'))
 const SaintOfDay = dynamic(import('../components/homeInnerComponents/SaintOfDay'))
 const CatholicNews = dynamic(import('../components/homeInnerComponents/CatholicNews'))
-//about to start https://learnnextjs.com/basics/fetching-data-for-pages/fetching-batman-shows
-//which would be hooking this thing up to a server and getting data
 
 
 const leftColumnBorder = {
@@ -38,7 +38,20 @@ const hrIndex = {
   //        background-size: cover;
   //     }
 
-export default () => (
+
+
+export default class index extends React.Component {
+  static async getInitialProps () {
+    // eslint-disable-next-line no-undef
+    const cNewsArray = eval("require('cNewsArray')")
+    const res = await fetch('cNewsArray')
+    const json = await res.json()
+    console.log("cNewsArray before return" + cNewsArray)
+    return { cNewsArray: cNewsArray }
+  }
+
+  render () {
+    return (
   <Layout>
 
     <div style={backgroundInner}>
@@ -71,4 +84,7 @@ export default () => (
     </div>
 
   </Layout>
-)
+    )
+  }
+}
+

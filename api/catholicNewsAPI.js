@@ -1,6 +1,6 @@
 //This page is currently not being utilized. Instead I am scraping directly into the DB and loading the page with what is currently in the db.
 
-let cNewsArray = [
+var cNewsArray = [
 {
  "title" : "After three years of ISIS occupation, the Mass returns to Mosul",
  "link" : "https://www.catholicnewsagency.com/news/after-three-years-of-isis-occupation-the-mass-returns-to-mosul-25516/" ,
