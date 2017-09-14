@@ -1,65 +1,35 @@
-/* MongoDB stuff */
-/* ************* */
-// var bodyParser = require("body-parser");
-// var mongoose = require("mongoose");
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// mongoose.Promise = Promise;
-/* ************* */
-/* ************* */
-const express = require('express')
+const { createServer } = require('http')
+const { parse } = require('url')
 const next = require('next')
-// Scraping stuff
+
 const request = require("request")
 const cheerio = require("cheerio")
-// Scraping stuff End
+
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-/* ************* */
-/* MongoDB stuff */
-/* ************* */
 
-// mongoose.connect("mongodb://localhost/SaintPaschalDev");
-// Hook mongoose connection to db
-// var db = mongoose.connection;
+// https://github.com/zeit/next.js/issues/291
+// This seems like the solution to custom API routing to get data to render to individual components / pages. 
 
-// Log any mongoose errors
-// db.on("error", function(error) {
-//   console.log("Mongoose Error: ", error);
-// });
+app.prepare().then(() => {
+  createServer((req, res) => {
+    // Be sure to pass `true` as the second argument to `url.parse`.
+    // This tells it to parse the query portion of the URL.
+    const parsedUrl = parse(req.url, true)
+    const { pathname, query } = parsedUrl
 
-// Log a success message when we connect to our mongoDB collection with no issues
-// db.once("open", function() {
-//   console.log("Mongoose connection successful.");
-// });
-
-/* ************* */
-/* ************* */
-/* ************* */
-
-app.prepare()
-.then(() => {
-  const server = express()
-
-  // The code below is for next.js "dynamic pages (similar to react router, technically every react app is "dynamic")"
-  // server.get('/p/:id', (req, res) => {
-  //   const actualPage = '/post'
-  //   const queryParams = { title: req.params.id }
-  //   app.render(req, res, actualPage, queryParams)
-  // })
-
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
-
-  server.listen(3000, (err) => {
+    if (pathname === '/a') {
+      app.render(req, res, '/b', query)
+    } else if (pathname === '/b') {
+      app.render(req, res, '/a', query)
+    } else {
+      handle(req, res, parsedUrl)
+    }
+  }).listen(3000, err => {
     if (err) throw err
-    console.log('> Ready test on http://localhost:3000')
+    console.log('> Ready on http://localhost:3000')
   })
-})
-.catch((ex) => {
-  console.error(ex.stack)
-  process.exit(1)
 })
 
 ////////////////////////////////
