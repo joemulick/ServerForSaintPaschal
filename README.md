@@ -4,7 +4,7 @@ Website for Saint Paschal Baylon Church located in Thousand Oaks, CA.
 
 This website features:
 
-React JS / Node JS /  Next.js / Express / React-Bootstrap 
+React JS / Node JS / Next.js / React-Bootstrap 
 
 Universal (isomorphic) Javascript web application.
 
@@ -24,3 +24,5 @@ $ npm install
 
 $ npm start
 
+
+9/14 I am switching back to node - express - mongodb - react-create-app due to the complexity vs developing a traditional node backend. https://github.com/joemulick/Saint-Paschal-Baylon-Church
