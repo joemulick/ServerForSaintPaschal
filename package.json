@@ -13,10 +13,6 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.15.4",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.5",
-    "express-validator": "^3.2.1",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^3.2.1",
     "path": "^0.12.7",
