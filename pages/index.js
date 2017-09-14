@@ -5,8 +5,7 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Row, Col } from 'react-bootstrap'
 import Layout from '../components/MyLayout.js'
-import cNewsArray from '../api/catholicNewsAPI'
-const Welcome = dynamic(import('../components/homeInnerComponents/Welcome'))
+const Welcome = dynamic(import('../components/homeInnerComponents/Welcome.js'))
 const MassTimes = dynamic(import('../components/homeInnerComponents/MassTimes'))
 const Events = dynamic(import('../components/homeInnerComponents/Events'))
 const SaintOfDay = dynamic(import('../components/homeInnerComponents/SaintOfDay'))
@@ -41,14 +40,12 @@ const hrIndex = {
 
 
 export default class index extends React.Component {
-  static async getInitialProps () {
-    // eslint-disable-next-line no-undef
-    const cNewsArray = eval("require('cNewsArray')")
-    const res = await fetch('cNewsArray')
-    const json = await res.json()
-    console.log("cNewsArray before return" + cNewsArray)
-    return { cNewsArray: cNewsArray }
-  }
+
+static getInitialProps ({ req }) {
+  const baseUrl = req ? `${req.protocol}://${req.get('C:\Users\Joe\Desktop\UCLA-Extension-Files\Github-Repos\ServerForSaintPaschal\api')}` : '';
+  const response = await fetch(baseUrl + '/catholicNewsAPI.js');
+  console.log('TEST TEST TEST')
+}
 
   render () {
     return (

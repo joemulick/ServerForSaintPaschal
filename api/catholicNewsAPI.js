@@ -1,6 +1,6 @@
-//This page is currently not being utilized. Instead I am scraping directly into the DB and loading the page with what is currently in the db.
+// //This page is currently not being utilized. Instead I am scraping directly into the DB and loading the page with what is currently in the db.
 
-var cNewsArray = [
+// var cNewsArray = [
 // {
 //  "title" : "After three years of ISIS occupation, the Mass returns to Mosul",
 //  "link" : "https://www.catholicnewsagency.com/news/after-three-years-of-isis-occupation-the-mass-returns-to-mosul-25516/" ,
@@ -49,6 +49,6 @@ var cNewsArray = [
 //  "summary" : "Sep 4, 2017 - 04:29 pm .- Constant, pouring rain did not deter the Catholic bishops of Scotland from consecrating Scotland to the Immaculate Heart of Mary on Sunday.",
 //  "imageurl" : "https://www.catholicnewsagency.com/images/Our_Lady_of_Fatima_Credit_Ricardo_Perna_Shutterstock_CNA.jpeg?w=640"
 // }
-]
+// ]
 
-export default cNewsArray
+// export default cNewsArray
