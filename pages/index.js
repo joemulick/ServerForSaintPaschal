@@ -1,5 +1,4 @@
 import React from 'react'
-import fetch from 'isomorphic-fetch'
 import Link from 'next/link'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
@@ -41,11 +40,6 @@ const hrIndex = {
 
 export default class index extends React.Component {
 
-static getInitialProps ({ req }) {
-  const baseUrl = req ? `${req.protocol}://${req.get('C:\Users\Joe\Desktop\UCLA-Extension-Files\Github-Repos\ServerForSaintPaschal\api')}` : '';
-  const response = await fetch(baseUrl + '/catholicNewsAPI.js');
-  console.log('TEST TEST TEST')
-}
 
   render () {
     return (
