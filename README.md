@@ -24,5 +24,5 @@ $ npm install
 
 $ npm start
 
+9/14 I am switching back to node - express - mongodb - react-create-app due to the complexity vs developing w/ next.js. https://github.com/joemulick/Saint-Paschal-Baylon-Church
 
-9/14 I am switching back to node - express - mongodb - react-create-app due to the complexity vs developing a traditional node backend. https://github.com/joemulick/Saint-Paschal-Baylon-Church
